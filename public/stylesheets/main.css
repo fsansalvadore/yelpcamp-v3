@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+}
+
+html {
+    height: 1vh;
+}
+
+.btn-warning {
+    color: white;
+}
+
+.btn-warning:hover {
+        color: white;
+    }
+
+.controlers {
+    margin-top: 10px;
+}
+
+.controlers form {
+    display: inline;
+}
+
+.alert, .breadcrumb {
+    margin: 0;
+    border-radius: 0;
+}
+
+.jumbotron {
+    border-radius: 0;
+}
+
+.navbar-nav, .nav-item {
+    -webkit-display: inline;
+    display: inline;
+    margin-left: 10px;
+}
+
+nav.jumbotron {
+    height: 60px;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+.camp_cover {
+    position: relative;
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 6px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+a {
+    color: rgba(0,0,0,0.8);
+}
+
+.form-box {
+    position: relative;
+    min-height: 600px;
+    max-width: 400px;
+    margin: 0 auto;
+    top: 80px;
+}
+
+.card {
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+.card-text {
+    min-height: 50px;
+}
+
+.card-img-top2 {
+    position: relative;
+    width: 100%;
+    height: 140px;
+    background-position: center;
+    background-size: cover;
+}
+
+.col-md-12 {
+    margin-bottom: 20px;
+}
+
+.form-box h2 {
+    text-align: center;
+    font-size: 24px;
+    height: 80px;
+}
+
+button a, btn-success {
+    color: white;
+}
+button a:hover,
+btn-success:hover {
+    color: white;
+    text-decoration: none;
+}
+
+footer {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    bottom: 0;
+    height: 60px; 
+    font-size: 12px;
+    color: rgba(0,0,0,0.5);
+}
+
+footer p {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }

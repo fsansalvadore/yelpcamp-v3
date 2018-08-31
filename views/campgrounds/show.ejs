@@ -1,0 +1,51 @@
+<% include ../partials/header.ejs %>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/campgrounds">Campgrounds</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><%= campground.name %></li>
+  </ol>
+</nav>
+<div style="margin-top: 40px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <div class="camp_cover col" style="background-image: url(&quot;<%= campground.img %>&quot;)"></div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <h2><%= campground.name %></h2>
+                <p><%= campground.info %></p>
+                <div class="list-group">
+                    <% campground.comments.forEach(function(comment){ %>
+                          <div class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-between">
+                                  <h6 class="mb-1"><%= comment.author.username %></h6>
+                                  <small><%= moment(comment.createdAt).locale('it').fromNow() %></small>
+                                </div>
+                                <p class="mb-1"><%= comment.text %></p>
+                                <!--Buttons only appear if currentUser is equals to the author of the comment-->
+                                <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                                <div class="controlers">
+                                    <a href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit" class="btn btn-warning btn-sm">Edit</a>
+                                    <form action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST"><button class="btn btn-danger btn-sm">Delete</button></form>
+                                </div>
+                                <% }; %>
+                          </div>
+                    <% }); %>
+                    <div class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-between">
+                                  <a class="btn btn-success btn-sm" href="/campgrounds/<%= campground._id %>/comments/new">Add comment</a>
+                                </div>
+                          </div>
+                </div>
+                <div class="controlers">
+                    <a href="/campgrounds/<%= campground._id %>/edit" class="btn btn-warning btn-sm">Edit</a>
+                    <form action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% include ../partials/footer.ejs %>

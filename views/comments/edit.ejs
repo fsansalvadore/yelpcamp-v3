@@ -1,0 +1,15 @@
+<% include ../partials/header.ejs %>
+<div class="container">
+    <div class="form-box">
+        <h2>Edit comment</h2>
+        <form action="/campgrounds/<%= campground %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+            <div class="form-group">
+                <label for="commentText">Comment</label>
+                <textarea rows="4" class="form-control" type="text" id="commentText" name="comment[text]" placeholder="Write a comment"><%= comment.text %></textarea>
+            </div>
+            <button type="submit" class="form-control btn btn-success">Sumbit</button>
+        </form>
+    </div>
+</div>
+
+<% include ../partials/footer.ejs %>
